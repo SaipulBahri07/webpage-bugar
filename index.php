@@ -24,13 +24,13 @@
     
     <?php include 'includes/layanan.php'; ?>
     
-    <?php include 'includes/testimoni.php'; ?>
-    
     <?php include 'includes/booking.php'; ?>
     
-    <?php include 'includes/faq.php'; ?>
-    
     <?php include 'includes/cabang.php'; ?>
+
+     <?php include 'includes/faq.php'; ?>
+
+    <?php include 'includes/testimoni.php'; ?>
     
     <?php include 'includes/kontak.php'; ?>
     
