@@ -24,8 +24,6 @@
     
     <?php include 'includes/layanan.php'; ?>
     
-    <?php include 'includes/galeri.php'; ?>
-    
     <?php include 'includes/testimoni.php'; ?>
     
     <?php include 'includes/booking.php'; ?>

@@ -1,5 +1,4 @@
-<section class="hero" id="home">
-    <div class="hero-content">
+<section class="hero" id="home" style="min-height: auto; padding: 12% 5% 5% 5%;"> <div class="hero-content">
         <div class="hero-text">
             <h2>Datang Lelah & Letih Pulang Sehat & <span class="highlight">Bugar</span></h2>
             <p>Terapi pijat refleksi profesional dengan terapis berpengalaman. 12 cabang di seluruh Aceh dan layanan panggilan ke Rumah & Hotel siap melayani Anda.</p>
@@ -23,7 +22,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <div class="hero-image-placeholder" style="padding: 0; background: transparent; overflow: hidden;"> 
+            <div class="hero-image-placeholder" style="max-width: 400px; height: 400px; margin: 0 auto; padding: 0; background: transparent; overflow: hidden; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);"> 
                 <img src="assets/uploads/kaki.jpg" alt="Layanan Bugar Refleksi" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit;">
             </div>
         </div>

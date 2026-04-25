@@ -40,19 +40,19 @@
                 <a href="#booking" class="btn btn-primary" onclick="selectService('Paket 2', 'Outlet')">Pilih Paket</a>
             </div>
 
-            <div class="price-card ">
-                <div class="price-header">
-                    <h3 class="price-title">Paket 3</h3>
-                    <div class="price-amount">Rp 140K</div>
-                    <div class="price-duration">120 Menit</div>
-                </div>
-                <ul class="price-features">
-                    <li><span>refleksi</span><span class="price">✓</span></li>
-                    <li><span>Body Massage</span><span class="price">✓</span></li>
-                    <li><span>Pijat Kepala</span><span class="price">✓</span></li>
-                </ul>
-                <a href="#booking" class="btn btn-primary" onclick="selectService('Paket 3', 'Outlet')">Pilih Paket</a>
-            </div>
+          <div class="price-card animate" style="opacity:1!important; transform:none!important;">
+    <div class="price-header">
+        <h3 class="price-title">Paket 3</h3>
+        <div class="price-amount">Rp 140K</div>
+        <div class="price-duration">120 Menit</div>
+    </div>
+    <ul class="price-features">
+        <li><span>Refleksi</span><span class="price">✓</span></li>
+        <li><span>Body Massage</span><span class="price">✓</span></li>
+        <li><span>Pijat Kepala</span><span class="price">✓</span></li>
+    </ul>
+    <a href="#booking" class="btn btn-primary" onclick="selectService('Paket 3', 'Outlet')">Pilih Paket</a>
+</div>
             <div class="price-card animate" style="opacity:1!important;transform:none!important;">
                 <div class="price-header">
                     <h3 class="price-title">Paket 4</h3>
