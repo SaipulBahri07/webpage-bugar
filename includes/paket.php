@@ -110,6 +110,21 @@
                 </ul>
                 <a href="#booking" class="btn btn-primary" onclick="selectService('Paket 7', 'Outlet')">Pilih Paket</a>
             </div>
+            <div class="price-card featured animate" style="opacity:1!important;transform:none!important;">
+                <div class="price-header">
+                    <h3 class="price-title">Chiropractic,Kretek</h3>
+                    <div class="price-amount">Rp 300K</div>
+                    <div class="price-duration">120 Menit</div>
+                </div>
+                <ul class="price-features">
+                    <li><span>refleksi</span><span class="price">✓</span></li>
+                    <li><span>Body Massage</span><span class="price">✓</span></li>
+                    <li><span>Pijat Kepala</span><span class="price">✓</span></li>
+                    <li><span>Scrub</span><span class="price">✓</span></li>
+                    <li><span>Totok wajah</span><span class="price">✓</span></li>
+                </ul>
+                <a href="#booking" class="btn btn-primary" onclick="selectService('Chiropractic,Kretek', 'Outlet')">Pilih Paket</a>
+            </div>
         </div>
 
         <div class="pricing-grid" id="non-paket-content" style="display: none;">
@@ -118,8 +133,8 @@
                     <h3 class="price-title">Layanan Individual</h3>
                 </div>
                 <ul class="price-features">
-                    <li><span>Refleksi Kaki (30 Menit)</span><span class="price">Rp 60.000</span></li>
-                    <li><span>Pijat Punggung (30 Menit)</span><span class="price">Rp 70.000</span></li>
+                    <li><span>Refleksi Kaki (60 Menit)</span><span class="price">Rp 60.000</span></li>
+                    <li><span>Pijat Punggung (60 Menit)</span><span class="price">Rp 70.000</span></li>
                     <li><span>Full Body Massage (60 Menit)</span><span class="price">Rp 120.000</span></li>
                     <li><span>Terapi Kepala (20 Menit)</span><span class="price">Rp 40.000</span></li>
                     <li><span>Terapi Bahu & Leher (25 Menit)</span><span class="price">Rp 50.000</span></li>

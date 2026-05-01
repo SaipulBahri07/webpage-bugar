@@ -319,7 +319,7 @@
             addr:"Jl. Hasan Saleh, Neusu Jaya, Kec. Baiturrahman, Kota Banda Aceh 23116",
             wa:"6281234567802", phone:"6281234567802",
             maps:"https://maps.app.goo.gl/gsUZrTDaxteWBom59",
-            hours:"09.00 – 21.00",
+            hours:"09.00 – 23.00",
             therapists:[
                 { name:"Pak Andi",  role:"Senior Terapis", img:"assets/img/terapis_andi.jpg"  },
                 { name:"Bu Nurul",  role:"Terapis",         img:"assets/img/terapis_nurul.jpg" },
@@ -331,7 +331,7 @@
             addr:"Jl. Batoh, Kec. Lueng Bata, Kota Banda Aceh, Aceh",
             wa:"6281234567803", phone:"6281234567803",
             maps:"https://maps.google.com/?q=Batoh+Banda+Aceh",
-            hours:"09.00 – 21.00",
+            hours:"09.00 – 23.00",
             therapists:[
                 { name:"Pak Wahyu", role:"Senior Terapis", img:"assets/img/terapis_wahyu.jpg" },
                 { name:"Bu Maya",   role:"Terapis",         img:"assets/img/terapis_maya.jpg"  },
