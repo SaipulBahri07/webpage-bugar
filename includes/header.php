@@ -34,7 +34,7 @@
             <li><a href="#home">Beranda</a></li>
             <li><a href="#paket">Paket</a></li>
             <li><a href="#layanan">Layanan</a></li>
-            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#testimoni">Ulasan</a></li>
             <li><a href="#booking">Booking</a></li>
             <li><a href="#cabang">Cabang</a></li>
             <li><a href="#kontak">Kontak</a></li>

@@ -246,3 +246,38 @@ window.removeImage = function(event) {
     if(removeBtn) removeBtn.style.display = 'none'; 
     if(uploadContent) uploadContent.style.display = 'flex'; 
 };
+// Fungsi untuk memproses booking
+function prosesBooking(event) {
+    // Mencegah halaman refresh
+    event.preventDefault(); 
+
+    // Mengambil data dari form
+    const form = document.getElementById('formBooking');
+    const formData = new FormData(form);
+
+    const nama = formData.get('nama');
+    const layanan = formData.get('layanan');
+    const tanggal = formData.get('tanggal');
+    const cabang = formData.get('cabang');
+
+    // 1. Eksekusi pengiriman ke database dan email secara diam-diam (Background)
+    fetch('includes/proses_booking.php', {
+        method: 'POST',
+        body: formData
+    }).then(response => {
+        console.log("Data sedang diproses di server...");
+    }).catch(error => {
+        console.error("Terjadi kesalahan:", error);
+    });
+
+    // 2. Susun pesan untuk WhatsApp
+    const pesan_wa = `Halo Bugar Refleksi Cabang ${cabang}, saya ingin konfirmasi booking:\n\nNama: ${nama}\nLayanan: ${layanan}\nTanggal: ${tanggal}\n\nTerima kasih.`;
+    
+    // Ganti dengan nomor WhatsApp penerima (Pusat/Cabang)
+    const nomor_admin_wa = "6281234567890"; 
+    
+    const url_wa = `https://api.whatsapp.com/send?phone=${nomor_admin_wa}&text=${encodeURIComponent(pesan_wa)}`;
+
+    // 3. Langsung lempar pelanggan ke WhatsApp seketika (Instan)
+    window.location.href = url_wa;
+}

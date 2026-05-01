@@ -5,7 +5,7 @@
     </div>
     <div class="booking-container">
 
-        <!-- Gunakan ID unik bfForm agar tidak konflik dengan elemen lain -->
+        <!-- Form Booking -->
         <form id="bfForm" novalidate>
 
             <div class="form-group" style="background:#eefbff;padding:15px;border-radius:15px;border:1px solid #00B4D8;">
@@ -111,10 +111,9 @@
 
 <script>
 (function () {
-
     /* === NOMOR WA PER CABANG — ganti dengan nomor asli === */
     var WA = {
-        "Peunayong 1":  "6285167933801",
+        "Peunayong 1":  "6282162126499",
         "Peunayong 2":  "6281234567801",
         "Neusu":        "6285167933801",
         "Batoh":        "6281234567803",
@@ -127,7 +126,6 @@
         "Lhokseumawe":  "6281234567810",
         "Subulussalam": "6281234567811"
     };
-    var WA_UTAMA = "6283186645262";
 
     /* === UPDATE TOMBOL SAAT CABANG DIPILIH === */
     function onCabangChange() {
@@ -167,11 +165,12 @@
     /* === BIND EVENTS === */
     document.getElementById('bf_cabang').addEventListener('change', onCabangChange);
     document.getElementById('bf_tipe').addEventListener('change', onTipeChange);
-
 })();
 
-/* === KIRIM BOOKING — fungsi global dipanggil dari onclick === */
+/* === KIRIM BOOKING === */
 function bfKirim() {
+    var form = document.getElementById('bfForm');
+    
     var nama    = document.getElementById('bf_nama').value.trim();
     var telepon = document.getElementById('bf_telepon').value.trim();
     var cabang  = document.getElementById('bf_cabang').value;
@@ -182,7 +181,7 @@ function bfKirim() {
     var alamat  = document.getElementById('bf_alamat') ? document.getElementById('bf_alamat').value.trim() : '';
     var catatan = document.getElementById('bf_catatan').value.trim();
 
-    /* Validasi — tampilkan field mana yang kosong */
+    /* Validasi Form */
     var kosong = [];
     if (!nama)    kosong.push('Nama Lengkap');
     if (!telepon) kosong.push('Nomor Telepon/WA');
@@ -196,14 +195,30 @@ function bfKirim() {
         return;
     }
 
-    /* Format tanggal */
+    /* === 1. PROSES AJAX (SIMPAN DB & EMAIL DIAM-DIAM) === */
+    // Mengumpulkan semua data form menjadi format FormData
+    var formData = new FormData(form);
+    
+    // Mengirim ke file proses (pastikan path file benar)
+    fetch('includes/proses_booking.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Notifikasi email & database terkirim: " + data);
+    })
+    .catch(error => {
+        console.error("Terjadi kesalahan AJAX:", error);
+    });
+
+    /* === 2. PROSES REDIRECT KE WHATSAPP === */
     var tanggalFmt = tanggal;
     try {
         var d = new Date(tanggal + 'T00:00:00');
         tanggalFmt = d.toLocaleDateString('id-ID', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
     } catch(e) {}
 
-    /* Lokasi detail */
     var lokasi = '';
     if (tipe === 'Home Care') {
         lokasi = '\n🏠 *Alamat:* ' + (alamat || '-') + '\n⚠️ _Siap bayar transport (20-30k)_';
@@ -243,6 +258,8 @@ function bfKirim() {
         '_Terima kasih, kami segera konfirmasi!_ 🙏';
 
     var nomor = WA_MAP[cabang] || "6283186645262";
+    
+    // Buka tab WA secara instan
     window.open('https://wa.me/' + nomor + '?text=' + encodeURIComponent(msg), '_blank');
 }
 </script>

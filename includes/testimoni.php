@@ -40,12 +40,7 @@ if (isset($_POST['kirim_testi'])) {
                     $bintang = str_repeat('⭐', $row['rating']);
                     echo "<div class='testi-slide'>";
                     echo "  <div class='testi-card-modern'>";
-                    if (!empty($row['foto'])) {
-                        echo "    <div class='testi-img'><img src='assets/uploads/{$row['foto']}' alt='User'></div>";
-                    } else {
-                        $inisial = strtoupper(substr($row['nama'], 0, 1));
-                        echo "    <div class='testi-img no-img'>{$inisial}</div>";
-                    }
+        
                     echo "    <div class='testi-rating'>{$bintang}</div>";
                     echo "    <p class='testi-desc'>\"{$row['deskripsi']}\"</p>";
                     echo "    <h4 class='testi-name'>{$row['nama']}</h4>";
@@ -55,9 +50,6 @@ if (isset($_POST['kirim_testi'])) {
             }
             ?>
         </div>
-
-        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
     <div style="text-align: center; margin-top: 3rem;">
@@ -78,20 +70,7 @@ if (isset($_POST['kirim_testi'])) {
                 </div>
                 <input type="text" name="nama" placeholder="Nama Lengkap" required class="modal-input">
                 <textarea name="deskripsi" placeholder="Ceritakan pengalaman Anda..." rows="4" required class="modal-input"></textarea>
-                <div class="file-upload">
-    <div class="file-upload">
-    <div class="upload-box-petak" id="uploadBox">
-        <div class="upload-content" id="uploadContent">
-            <div class="upload-icon">📸</div>
-            <span class="upload-text">Klik untuk pilih foto (Opsional)</span>
-        </div>
-
-        <img src="" alt="Preview" class="preview-img" id="imagePreview">
-        <button type="button" class="remove-btn" id="removeImageBtn" onclick="removeImage(event)">&times;</button>
-
-        <input type="file" name="foto" id="foto" accept="image/*" onchange="previewFile()">
-    </div>
-</div>
+               
                 <button type="submit" name="kirim_testi" class="modal-submit">Kirim Sekarang</button>
             </form>
         </div>
